@@ -22,7 +22,7 @@ function clickLMB () {
     }
 }
 function closeTaskTab() {
-    var closeBtn = className("android.widget.Button").depth(18).findOnce();
+    var closeBtn = className("android.widget.Button").depth(18).indexInParent(1).findOnce();
     if(closeBtn) {
         closeBtn.click();
         sleep(2000);
@@ -45,7 +45,8 @@ execShopCheckin(shops);
 toast("任务完成，感谢支持")
 function execTask() {
     while (true) {
-        var target = text("去进店").findOne(2000) || text("去浏览").findOne(500) || text("签到").findOne(500);
+        //去进店
+        var target = text("去进店").findOne(1000) || text("去浏览").findOne(500) || text("签到").findOne(500);
         if (target == null) {
             toast("浏览任务完成");
             back();
@@ -70,24 +71,26 @@ function execTask() {
                 }
             }
         }
+        sleep(1500);
     }
 }
 function viewWeb(time) {
     gesture(1000, [300, device.height - 300], [300, device.height - 500]);
     var cnt = 1;
     while (true) {
-        var finish = desc("任务完成").exists() || descStartsWith("已获得").exists() || textStartsWith("今日已达上限").exists();
+        var finish = text("继续逛逛").exists() || desc("任务完成").exists() || descStartsWith("已获得").exists() || textStartsWith("今日已达上限").exists() || textStartsWith("已获得").exists() || textContains("返回双11合伙人").exists();
         if(finish && cnt <= 7) {
             //表示出现异常，需要重新打开任务栏
+            toast("任务有异常，尝试修复");
             back();
             sleep(2000);
-            toast("任务有异常，尝试修复")
             return false
         }
         if (finish || cnt > time) {
             var enterGameBtn = desc("捉猫猫").findOnce();
             if(enterGameBtn) {
                 toast("当前位置异常，尝试修复")
+                sleep(1000);
                 enterGameBtn.click();
                 sleep(10000);
                 clickLMB();
