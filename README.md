@@ -4,11 +4,19 @@
 
 **:warning:另郑重告之，使用脚本带来的后果自负，且严禁一切商业使用行为！:warning:**   
 
-### 友情链接
+### 友情链接  
 朋友开发的京东全民养红包脚本，完成18级之前的任务，感兴趣的朋友可以加个star[京东双十一养包包](https://github.com/dadadadashan/2019double11-jingdong)  
+
+### 为我助力
+:pray::pray:代码调试真的不易，脚本会在运行结束前为我的队伍助力，若有得罪，请您多多包涵~ :pray::pray:
 
 ### 公告
 ******
+- :heart:[10-31]发布[double11v2.2.0](https://github.com/ErazerControl/2019double11/releases)
+    - 修复点击不到领喵币按钮的bug
+    - 修复循环执行已浏览过的任务bug
+    - 修复部分浏览任务是淘宝主页导致脚本失效的bug
+    - 新增1家签到店铺
 - :heart:[10-28]发布[double11v2.1.0](https://github.com/ErazerControl/2019double11/releases)
     - 修复浏览广告时遇到视频出错的bug
     - 修复误点便宜好货的bug
@@ -19,10 +27,7 @@
 - :heart:[10-24]apk是我用网上auto.js打包工具打包的，安全性未知，不过我也在用，若出现任何问题与本人无关。apk下载地址[double11v1.0.0](https://github.com/ErazerControl/2019double11/releases)
 - :heart:[10-23]感谢star的小伙伴，已发布apk包 
 
-### 为我助力
-:pray::pray:代码调试真的不容易，感觉还不错的话帮我队助个力呀~ :pray::pray:
 
-![助力](https://github.com/ErazerControl/2019double11/blob/master/images/helpme.png)
 
 ### 使用说明
 ******

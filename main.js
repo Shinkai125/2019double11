@@ -5,29 +5,51 @@ var shops = ["欧莱雅官方旗舰店", "美的官方旗舰店", "GREE格力官
     "荣耀官方旗舰店", "vivo官方旗舰店", "OPPO官方旗舰店", "李宁官方网店", "olay官方旗舰店", "YSL圣罗兰美妆官方旗舰店",
     "蒙牛旗舰店", "自然堂旗舰店", "KIEHL'S科颜氏官方旗舰店", "Lancome兰蔻官方旗舰店", "雅诗兰黛官方旗舰店天猫店",
     "美特斯邦威官方网店", "宝洁官方旗舰店", "adidas官方旗舰店", "奥克斯旗舰店", "海尔官方旗舰店", "HR赫莲娜官方旗舰店",
-    "阿玛尼美妆官方旗舰店", "波司登官方旗舰店", "SK-II官方旗舰店", "百雀羚旗舰店", "戴森官方旗舰店", "ZARA官方旗舰店"]
+    "阿玛尼美妆官方旗舰店", "波司登官方旗舰店", "SK-II官方旗舰店", "百雀羚旗舰店", "戴森官方旗舰店", "ZARA官方旗舰店", "HomeFacialPro旗舰店","#2000362575"]
 sleep(3000);
 launchApp(appName);
 sleep(3000);
-//寻找领喵币按钮，存在则执行任务，否则退出脚本
-var lingmiaobi = indexInParent(5).depth(18).text("").findOnce();
-if (lingmiaobi) {
-    lingmiaobi.click();
-    sleep(1000);
+function clickLMB () {
+    //寻找领喵币按钮，存在则执行任务，否则退出脚本
+    var lingmiaobi = indexInParent(5).depth(18).text("领喵币").findOnce();
+    if (lingmiaobi) {
+        lingmiaobi.click();
+        sleep(1000);
+        return true
+    }
+    else {
+        return false
+    }
+}
+function closeTaskTab() {
+    var closeBtn = className("android.widget.Button").depth(18).findOnce();
+    if(closeBtn) {
+        closeBtn.click();
+        sleep(2000);
+        return true
+    }
+    else {
+        return false
+    }
+}
+if(clickLMB()) {
     execTask();
 }
 else {
     toast("未检查到领喵币按钮")
 }
+
 toast("即将执行店铺签到任务");
-back();
 sleep(1000);
 execShopCheckin(shops);
-toast("任务完成")
+toast("任务完成，感谢支持")
 function execTask() {
     while (true) {
         var target = text("去进店").findOne(2000) || text("去浏览").findOne(500) || text("签到").findOne(500);
         if (target == null) {
+            toast("浏览任务完成");
+            back();
+            sleep(1000);
             break;
         }
         target.click();
@@ -37,20 +59,44 @@ function execTask() {
             continue;
         }
         else {
-            //执行浏览广告类任务
-            viewWeb(20);
+            //执行浏览广告类任务,返回值为false表示执行任务异常
+            var flag = viewWeb(20);
+            if(!flag) {
+                if(closeTaskTab()) {
+                    clickLMB();
+                }
+                else {
+                    toast("未检测到任务栏关闭按钮")
+                }
+            }
         }
-        back();
-        sleep(2000);
     }
 }
 function viewWeb(time) {
     gesture(1000, [300, device.height - 300], [300, device.height - 500]);
     var cnt = 1;
     while (true) {
-        var finish = desc("任务完成").exists() || descStartsWith("已获得").exists();
+        var finish = desc("任务完成").exists() || descStartsWith("已获得").exists() || textStartsWith("今日已达上限").exists();
+        if(finish && cnt <= 7) {
+            //表示出现异常，需要重新打开任务栏
+            back();
+            sleep(2000);
+            toast("任务有异常，尝试修复")
+            return false
+        }
         if (finish || cnt > time) {
-            break;
+            var enterGameBtn = desc("捉猫猫").findOnce();
+            if(enterGameBtn) {
+                toast("当前位置异常，尝试修复")
+                enterGameBtn.click();
+                sleep(10000);
+                clickLMB();
+            }
+            else {
+                back();
+                sleep(500);
+            }
+            return true
         }
         sleep(1000);
         cnt += 1;
@@ -60,7 +106,8 @@ function execShopCheckin(shopName) {
     var searchBar = desc("搜索").findOnce();
     //点击首页的搜索按钮
     if (searchBar) {
-        searchBar.click();
+        log(searchBar);
+        log(searchBar.click());
         shopCheckin(shopName);
     }
     else {
@@ -73,8 +120,22 @@ function shopCheckin(shopName) {
         sleep(2000);
         searchBar2 = depth(10).indexInParent(0).findOnce();
         searchBar2.setText(shopName[i]);
-        sleep(500);
+        sleep(1000);
         depth(9).indexInParent(2).text("搜索").findOne(5000).click();
+        sleep(1000);
+        if (i === shopName.length - 1) {
+            var helpme = text("为TA助力").findOne(5000);
+            if (helpme) {
+                click((helpme.bounds().left + helpme.bounds().right) / 2, (helpme.bounds().top + helpme.bounds().bottom) / 2);
+                sleep(500);
+            }
+            back();
+            sleep(500);
+            back();
+            sleep(500);
+            back();
+            continue;
+        }
         //点击店铺
         var shopText = text("店铺").findOne(5000);
         var currentShop = shopText.parent().parent().parent();
