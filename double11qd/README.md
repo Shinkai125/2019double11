@@ -11,7 +11,7 @@
 1. 店铺信息同步至[腾讯云](http://152.136.66.149/double11/getShop/)，方便增删店铺
 2. double11qdv1.0.0下载链接 https://share.weiyun.com/5MJHT6J
 ### 使用文档
-1. 关闭手机淘宝，并确保其没在后台运行！
+1. 关闭手机淘宝！并确保其没在后台运行！
 2. 运行double11qd
 4. 脚本会检测无障碍模式，若未开启会自动跳转至设置页面，请手动开启后返回至double11qd运行页面以免脚本运行失败
 5. 脚本自动获取最新店铺信息
@@ -19,3 +19,4 @@
 
 ps：音量+键可以强制终止脚本  
 ### 效果展示
+![double11qd演示](https://github.com/ErazerControl/2019double11/blob/master/images/double11qd.gif)
