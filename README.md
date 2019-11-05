@@ -8,7 +8,8 @@
 :pray::pray:代码调试真的不易，脚本会在运行结束前为我的队伍助力，若有得罪，请您多多包涵~ :pray::pray:
 
 ### 友情链接  
-朋友开发的[京东全民养红包脚本](https://github.com/dadadadashan/2019double11-jingdong)，完成18级之前的任务，感兴趣的朋友可以加个star:star:
+- 朋友开发的[京东全民养红包脚本](https://github.com/dadadadashan/2019double11-jingdong)，完成18级之前的任务，感兴趣的朋友可以加个star:star:
+- 已经转战拼夕夕，真香...给像我一样的羊毛党写了篇拼多多领红包的攻略，[https://zhuanlan.zhihu.com/p/90172019](https://zhuanlan.zhihu.com/p/90172019)，欢迎点赞噢~
 
 ### 常见问题  
 1. 问：你提供的apk是否安全？  
