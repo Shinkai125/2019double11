@@ -11,26 +11,19 @@
 - 朋友开发的[京东全民养红包脚本](https://github.com/dadadadashan/2019double11-jingdong)，完成18级之前的任务，感兴趣的朋友可以加个star:star:
 - 已经转战拼夕夕，真香...给像我一样的羊毛党写了篇拼多多领红包的攻略，[https://zhuanlan.zhihu.com/p/90172019](https://zhuanlan.zhihu.com/p/90172019)，欢迎点赞噢~
 
-### 常见问题  
-1. 问：你提供的apk是否安全？  
-
-   答：不知道。首先，我只能保证我写的脚本代码main.js没有任何安全性的问题，其次，autojs.apk以及打包apk的插件由于全网下架，我是在autojs千人的交流群找的，这两个我不敢保证他们是否安全。确实得谨慎使用，使用脚本所带来的一切后果自负！！
-   ps:我个人以及周围朋友都是使用的此脚本，暂未发现有什么异常
-2. 问：日志提示系统版本过低，安卓7.0以上才能运行，有解决的办法吗？  
-
-   答：没有。我写的这套脚本需要无障碍模式，要求安卓系统的版本>7.0。
-3. 问：脚本后台杀掉了，但是为什么还是没停止？  
-
-   答：使用音量+键可以停止脚本。
-4. 问：如何自己打包apk？  
-
-   答：你需要将main.js下载到手机上，并在手机上安装auto.js和auto.js打包插件，使用auto.js加载main.js将其打包成apk即可。
-4. 问：教练，我想学auto.js。  
-
-   答：授人以鱼，不如授之以渔。之后我会针对有编程基础，不了解auto.js但想入门的同学，写一篇auto.js实战文档。相信可以节约你半天到一天的时间。  
+### 常见问题
+我针对大家经常遇到的问题做了回答，详细请看[QA](https://github.com/ErazerControl/2019double11/blob/master/QA.md)  
 
 ### 公告
 ******
+- :heart:[11-3]发布[double11qdv1.0.0](https://share.weiyun.com/5MJHT6J)  
+说明：由于十一月淘宝更新导致大量店铺无法完成签到，因此结合[52pojie大佬的代码](https://www.52pojie.cn/thread-1045790-1-1.html)以及[issue41](https://github.com/ErazerControl/2019double11/issues/41)的[RebornL](https://github.com/RebornL)大佬的想法，发布于此，本版本因精力有限目前只包含店铺签到！只包含店铺签到！只包含店铺签到！由于本脚本与[double11v2.2.1](https://github.com/ErazerControl/2019double11/releases)使用方式略有不同，暂时只能与其配合使用，这两天有时间会结合一起发布double11v3.0.0。
+    - 极速店铺签到
+    - 店铺信息部署至云服务器
+注意：double11qdv1.0.0的使用文档[点我](https://github.com/ErazerControl/2019double11/blob/master/double11qd/README.md)
+- :heart:[11-1]发布[double11v2.2.1](https://github.com/ErazerControl/2019double11/releases)
+    - 修复关闭任务栏的×按钮点不到的bug
+    - 优化浏览广告时间
 - :heart:[10-31]发布[double11v2.2.0](https://github.com/ErazerControl/2019double11/releases)
     - 修复点击不到领喵币按钮的bug
     - 修复循环执行已浏览过的任务bug
@@ -80,6 +73,16 @@
 * 完成签到任务
 ### 版本历史
 ******
+# v2.2.1
+###### 2019/11/1
+* `修复` 关闭任务栏的×按钮点不到
+* `优化` 浏览部分广告的时间
+# v2.2.0
+###### 2019/10/31
+* `修复` 点击不到领喵币按钮
+* `修复` 循环执行已浏览过的任务
+* `修复` 部分浏览任务是淘宝主页导致脚本失效
+* `新增` 1家签到店铺
 # v2.1.0
 ###### 2019/10/28
 * `修复` 浏览广告时遇到视频出错
