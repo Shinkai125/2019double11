@@ -15,6 +15,8 @@
 
 ### 公告
 ******
+- :heart:[11-9]发布[double11v2.2.2](https://github.com/ErazerControl/2019double11/releases)
+    - 修复因淘宝更新领喵币点不到的bug
 - :heart:[11-3]发布[double11qdv1.0.0](https://share.weiyun.com/5MJHT6J)  
 说明：由于十一月淘宝更新导致大量店铺无法完成签到，因此结合[52pojie大佬的代码](https://www.52pojie.cn/thread-1045790-1-1.html)以及[issue41](https://github.com/ErazerControl/2019double11/issues/41)的[RebornL](https://github.com/RebornL)大佬的想法，发布于此，本版本因精力有限目前只包含店铺签到！只包含店铺签到！只包含店铺签到！由于本脚本与[double11v2.2.1](https://github.com/ErazerControl/2019double11/releases)使用方式略有不同，暂时只能与其配合使用，这两天有时间会结合一起发布double11v3.0.0。
     - 极速店铺签到

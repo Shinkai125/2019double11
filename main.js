@@ -11,7 +11,7 @@ launchApp(appName);
 sleep(3000);
 function clickLMB () {
     //寻找领喵币按钮，存在则执行任务，否则退出脚本
-    var lingmiaobi = indexInParent(5).depth(18).text("领喵币").findOnce();
+    var lingmiaobi = indexInParent(4).depth(18).text("领喵币").findOnce();
     if (lingmiaobi) {
         lingmiaobi.click();
         sleep(1000);
